@@ -20,7 +20,7 @@ export default {
 <template>
     <div class="container">
         <div class="counter-cards">
-            <span>Found {{ this.store.variabileDiProva.data.length }} cards</span>
+            <span>Found {{ }} cards</span>
         </div>
         <div class="row">
             <AppCards v-for="(element, i) in store.variabileDiProva.data" :key="i" :name="element.name"
