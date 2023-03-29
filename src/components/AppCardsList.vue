@@ -26,4 +26,17 @@ export default {
     </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.container {
+    background-color: white;
+    width: 80%;
+    margin: 50px auto;
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+}
+</style>

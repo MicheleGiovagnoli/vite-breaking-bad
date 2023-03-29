@@ -27,10 +27,16 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
-  <AppCardsList />
+  <div class="wrapper">
+    <AppHeader />
+    <AppCardsList />
+  </div>
 </template>
 
 <style lang="scss">
 @use './styles/general.scss';
+
+.wrapper {
+  background-color: orange;
+}
 </style>

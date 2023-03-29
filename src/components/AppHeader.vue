@@ -9,9 +9,13 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="header">
         <h1>Yu-Gi-Oh API</h1>
     </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.header {
+    background-color: white;
+}
+</style>
