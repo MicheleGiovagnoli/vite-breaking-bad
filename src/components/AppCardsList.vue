@@ -19,6 +19,9 @@ export default {
 
 <template>
     <div class="container">
+        <div class="counter-cards">
+            <span>Found {{ this.store.variabileDiProva.data.length }} cards</span>
+        </div>
         <div class="row">
             <AppCards v-for="(element, i) in store.variabileDiProva.data" :key="i" :name="element.name"
                 :images="element.card_images[0].image_url_small" :archetype="element.archetype" />
@@ -31,12 +34,18 @@ export default {
     background-color: white;
     width: 80%;
     margin: 50px auto;
+    padding: 40px;
+
+    .counter-cards {
+        background-color: black;
+        height: 50px;
+        color: white;
+    }
 
     .row {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        padding: 20px;
     }
 
 }
