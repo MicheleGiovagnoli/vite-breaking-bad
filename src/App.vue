@@ -1,5 +1,6 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
+import AppCardsList from './components/AppCardsList.vue';
 
 import { store } from './store.js';
 
@@ -8,14 +9,18 @@ import axios from 'axios';
 export default {
   components: {
     AppHeader,
+    AppCardsList,
   },
   data() {
-    return store
+    return {
+      store
+    }
   },
   created() {
     axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Alien')
       .then((response) => {
-        console.log(response.data.archetype);
+        this.store.variabileDiProva = response.data;
+        console.log(response.data);
       })
   }
 }
@@ -23,6 +28,7 @@ export default {
 
 <template>
   <AppHeader />
+  <AppCardsList />
 </template>
 
 <style lang="scss">

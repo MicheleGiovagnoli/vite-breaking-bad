@@ -1,19 +1,17 @@
 <script>
-//Importo la variabile 'store' dal file store.js
-import { store } from '../store.js';
-
 export default {
     nome: "AppHeader",
     data() {
         return {
-            store
         }
     },
 };
 </script>
 
 <template>
-    <div>prova</div>
+    <div>
+        <h1>Yu-Gi-Oh API</h1>
+    </div>
 </template>
 
 <style lang="scss"></style>
