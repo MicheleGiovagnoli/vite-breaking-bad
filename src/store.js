@@ -4,6 +4,7 @@ export const store = reactive(
     {
         variabileDiProva: [],
         filter: '',
-        archetype: ["Alien", "Noble Knight", "Melodius"],
+        archetype: ["Melodious", "Noble Knight", "Archfiend"],
+        counter: '',
     }
 )

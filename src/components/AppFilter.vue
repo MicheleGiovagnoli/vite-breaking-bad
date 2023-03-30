@@ -12,6 +12,8 @@ export default {
     },
 }
 </script>
+
+
 <template>
     <div class="filter-container">
         <select name="filter" id="filter" v-model="store.filter" @change="$emit('doFilter')">
@@ -21,8 +23,24 @@ export default {
         </select>
     </div>
 </template>
+
+
 <style lang="scss">
-#filter {
-    width: 100px;
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+    #filter {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        transition: all 0.5s ease;
+
+        &:hover {
+            background-color: rgb(121, 117, 117);
+        }
+    }
 }
 </style>

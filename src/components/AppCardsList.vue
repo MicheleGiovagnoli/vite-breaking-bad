@@ -16,12 +16,18 @@ export default {
             store
         }
     },
+    methods: {
+    }
 };
 </script>
 
 <template>
     <div class="container">
+
+        <!-- CONTATORE -->
         <AppCounter />
+
+        <!-- GENERO LE CARTE -->
         <div class="row">
             <AppCards v-for="(element, i) in store.variabileDiProva.data" :key="i" :name="element.name"
                 :images="element.card_images[0].image_url_small" :archetype="element.archetype" />

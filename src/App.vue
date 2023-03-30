@@ -2,6 +2,7 @@
 import AppHeader from './components/AppHeader.vue';
 import AppCardsList from './components/AppCardsList.vue';
 import AppFilter from './components/AppFilter.vue';
+import AppCounter from './components/AppCounter.vue';
 
 import { store } from './store.js';
 
@@ -12,6 +13,7 @@ export default {
     AppHeader,
     AppCardsList,
     AppFilter,
+    AppCounter,
   },
   data() {
     return {
@@ -20,7 +22,7 @@ export default {
   },
   methods: {
     getArchetype() {
-      let urlApi = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0';
+      let urlApi = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=500&offset=0';
       if (this.store.filter) {
         urlApi += `&archetype=${store.filter}`;
         console.log(urlApi);
@@ -43,7 +45,6 @@ export default {
   <div class="wrapper">
     <AppHeader />
     <AppFilter @doFilter="getArchetype" />
-
     <AppCardsList />
   </div>
 </template>
