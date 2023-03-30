@@ -20,9 +20,9 @@ export default {
   },
   methods: {
     getArchetype() {
-      let urlApi = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
+      let urlApi = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0';
       if (this.store.filter) {
-        urlApi += `?archetype=${store.filter}`;
+        urlApi += `&archetype=${store.filter}`;
         console.log(urlApi);
       }
       console.log(store.filter);
