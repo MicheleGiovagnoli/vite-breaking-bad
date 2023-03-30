@@ -1,5 +1,6 @@
 <script>
 import AppCards from './AppCards.vue';
+import AppCounter from './AppCounter.vue';
 
 //Importo la variabile 'store' dal file store.js
 import { store } from '../store.js';
@@ -7,6 +8,7 @@ import { store } from '../store.js';
 export default {
     components: {
         AppCards,
+        AppCounter,
     },
     nome: "AppCardsList",
     data() {
@@ -19,9 +21,7 @@ export default {
 
 <template>
     <div class="container">
-        <div class="counter-cards">
-            <span>Found {{ }} cards</span>
-        </div>
+        <AppCounter />
         <div class="row">
             <AppCards v-for="(element, i) in store.variabileDiProva.data" :key="i" :name="element.name"
                 :images="element.card_images[0].image_url_small" :archetype="element.archetype" />
@@ -35,12 +35,6 @@ export default {
     width: 80%;
     margin: 50px auto;
     padding: 40px;
-
-    .counter-cards {
-        background-color: black;
-        height: 50px;
-        color: white;
-    }
 
     .row {
         display: flex;

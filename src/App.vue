@@ -1,6 +1,7 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import AppCardsList from './components/AppCardsList.vue';
+import AppFilter from './components/AppFilter.vue';
 
 import { store } from './store.js';
 
@@ -10,18 +11,30 @@ export default {
   components: {
     AppHeader,
     AppCardsList,
+    AppFilter,
   },
   data() {
     return {
-      store
+      store,
+    }
+  },
+  methods: {
+    getArchetype() {
+      let urlApi = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
+      if (this.store.filter) {
+        urlApi += `?archetype=${store.filter}`;
+        console.log(urlApi);
+      }
+      console.log(store.filter);
+      axios.get(urlApi)
+        .then((response) => {
+          this.store.variabileDiProva = response.data;
+          console.log(response.data);
+        })
     }
   },
   created() {
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Alien')
-      .then((response) => {
-        this.store.variabileDiProva = response.data;
-        console.log(response.data);
-      })
+    this.getArchetype();
   }
 }
 </script>
@@ -29,6 +42,8 @@ export default {
 <template>
   <div class="wrapper">
     <AppHeader />
+    <AppFilter @doFilter="getArchetype" />
+
     <AppCardsList />
   </div>
 </template>
